@@ -11,9 +11,21 @@
        DATA DIVISION.
       *--------------
        FILE SECTION.
-       FD INFILE
+        FD INFILE
+           LABEL RECORDS ARE OMITTED
+           RECORDING MODE F  /* Fixed recording mode */
+           RECORD CONTAINS 80 CHARACTERS
+           DATA RECORD IS IN-RECORD.
+
+       01 IN-RECORD PIC X(80).
 
        FD OUTFILE
+           LABEL RECORDS ARE OMITTED
+           RECORDING MODE F  /* Fixed recording mode */
+           RECORD CONTAINS 80 CHARACTERS
+           DATA RECORD IS OUT-RECORD.
+
+       01 OUT-RECORD PIC X(80).
 
        WORKING-STORAGE SECTION.
        01  Counter           PIC 9(3) VALUE 0.
