@@ -1,0 +1,5 @@
+STDENT CODE     NAME            
+-----------     ----
+0001            MARIA ANNA DIVINO
+0002            FERNANDO SUCLERS
+0003            SPONGEBOB CRUZ
