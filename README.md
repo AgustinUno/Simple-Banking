@@ -1,65 +1,49 @@
-# Simple-Banking
 
-This project demonstrates the implementation of a simple banking system using COBOL programming language. The system allows users to perform basic banking operations such as account creation, deposit, withdrawal, and balance inquiry. The design of the system is based on flowchart lectures to provide a structured and easy-to-understand approach.
 
-### Project Structure
+<h1 style="color: #2196F3;">Simple Banking System in COBOL</h1>
+<p style="color: #333;">This project demonstrates the implementation of a simple banking system using COBOL programming language. The system allows users to perform basic banking operations such as account creation, deposit, withdrawal, and balance inquiry. The design of the system is based on flowchart lectures to provide a structured and easy-to-understand approach.</p>
 
-The project consists of the following components:
+<h2>Project Structure</h2>
+<ul style="color: #333;">
+<li><strong>COBOL Programs:</strong> The main COBOL programs handle the user interface, account operations, and data manipulation.</li>
+<li><strong>Data Files:</strong> Data files store account information such as account numbers, balances, and customer details.</li>
+<li><strong>Flowcharts:</strong> Flowcharts provide a visual representation of the program logic and data flow.</li>
+</ul>
 
-1. **COBOL Programs:** The main COBOL programs handle the user interface, account operations, and data manipulation.
+<h2>System Features</h2>
+<ul style="color: #333;">
+<li><strong>Account Creation:</strong> Users can create new accounts by providing their name, address, and initial deposit amount.</li>
+<li><strong>Deposit:</strong> Users can deposit funds into their accounts by specifying the account number and deposit amount.</li>
+<li><strong>Withdrawal:</strong> Users can withdraw funds from their accounts, provided the withdrawal amount does not exceed the account balance.</li>
+<li><strong>Balance Inquiry:</strong> Users can check their account balances by entering their account numbers.</li>
+</ul>
 
-2. **Data Files:** Data files store account information such as account numbers, balances, and customer details.
+<h2>System Requirements</h2>
+<p style="color: #333;">To run the banking system, you will need the following:</p>
+<ul style="color: #333;">
+<li><strong>COBOL Compiler:</strong> A COBOL compiler is required to compile and execute the COBOL programs.</li>
+<li><strong>Data Files:</strong> The data files containing account information should be placed in the appropriate directory.</li>
+<li><strong>Text Editor:</strong> A text editor is used to create and modify COBOL source code.</li>
+</ul>
 
-3. **Flowcharts:** Flowcharts provide a visual representation of the program logic and data flow.
+<h2>Usage Instructions</h2>
+<ol style="color: #333;">
+<li>Compile the COBOL programs using the COBOL compiler.</li>
+<li>Run the main COBOL program to start the banking system.</li>
+<li>Follow the on-screen instructions to perform banking operations.</li>
+</ol>
 
-### System Features
+<h2>Project Goals</h2>
+<ul style="color: #333;">
+<li>Implement a functional simple banking system using COBOL.</li>
+<li>Utilize flowchart techniques to design and structure the program logic.</li>
+<li>Demonstrate basic banking operations and data manipulation techniques in COBOL.</li>
+</ul>
 
-The simple banking system offers the following features:
-
-1. **Account Creation:** Users can create new accounts by providing their name, address, and initial deposit amount.
-
-2. **Deposit:** Users can deposit funds into their accounts by specifying the account number and deposit amount.
-
-3. **Withdrawal:** Users can withdraw funds from their accounts, provided the withdrawal amount does not exceed the account balance.
-
-4. **Balance Inquiry:** Users can check their account balances by entering their account numbers.
-
-### System Requirements
-
-To run the banking system, you will need the following:
-
-1. COBOL Compiler: A COBOL compiler is required to compile and execute the COBOL programs.
-
-2. Data Files: The data files containing account information should be placed in the appropriate directory.
-
-3. Text Editor: A text editor is used to create and modify COBOL source code.
-
-### Usage Instructions
-
-1. Compile the COBOL programs using the COBOL compiler.
-
-2. Run the main COBOL program to start the banking system.
-
-3. Follow the on-screen instructions to perform banking operations.
-
-### Project Goals
-
-The project aims to:
-
-1. Implement a functional simple banking system using COBOL.
-
-2. Utilize flowchart techniques to design and structure the program logic.
-
-3. Demonstrate basic banking operations and data manipulation techniques in COBOL.
-
-### Expected Outcomes
-
-Upon successful completion of the project, users should be able to:
-
-1. Create new bank accounts.
-
-2. Deposit and withdraw funds from accounts.
-
-3. Check account balances.
-
-4. Understand the basic structure and logic of a banking system implemented in COBOL.
+<h2>Expected Outcomes</h2>
+<ul style="color: #333;">
+<li>Users should be able to create new bank accounts.</li>
+<li>Users should be able to deposit and withdraw funds from accounts.</li>
+<li>Users should be able to check account balances.</li>
+<li>Users should understand the basic structure and logic of a banking system implemented in COBOL.</li>
+</ul>
