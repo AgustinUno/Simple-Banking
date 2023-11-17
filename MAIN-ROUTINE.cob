@@ -20,6 +20,10 @@
            05 IN-STD-ID PIC 9(4).
            05 SPC-01 PIC X(12).
            05 IN-STD-NAME PIC X(20).
+           05 SPC-02 PIC X(4).
+           05 IN-CODE PIC A(1).
+           05 IN-STD-CASH PIC 9(5)V99.
+      *     05 IN-STD-CASH PIC 9(5)V99.
       
        FD OUTFILE.
        01  OUT-RECORD.
@@ -29,6 +33,8 @@
        WORKING-STORAGE SECTION.
        01 SCTR PIC 9(3) VALUE 0.
        01 EOF-SWITCH PIC A(1) VALUE 'N'.
+       01 FRMT-VAL PIC $$$$,$$$,$$9.99.
+      
       *-----------------------------------------------------------------
        PROCEDURE DIVISION.
          MAIN-ROUTINE.
@@ -43,13 +49,15 @@
            STOP RUN.
 
        READ-PROCEDURE.
+           
            PERFORM UNTIL EOF-SWITCH = 'Y'
                READ INFILE
                    AT END
                        MOVE 'Y' TO EOF-SWITCH
                    NOT AT END
-                       DISPLAY IN-STD-ID, "     ", IN-STD-NAME
-                       
+                        MOVE IN-STD-CASH TO FRMT-VAL
+                       DISPLAY IN-STD-ID, "  ", IN-STD-NAME
+                                 ,"  ", FRMT-VAL       
                END-READ
            END-PERFORM.
      
