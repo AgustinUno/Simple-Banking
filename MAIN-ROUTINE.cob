@@ -18,6 +18,7 @@
        FD INFILE.
        01  IN-RECORD.
            05 IN-STD-ID PIC 9(4).
+           05 SPC-01 PIC X(12).
            05 IN-STD-NAME PIC X(20).
       
        FD OUTFILE.
@@ -30,7 +31,7 @@
        01 EOF-SWITCH PIC A(1) VALUE 'N'.
       *-----------------------------------------------------------------
        PROCEDURE DIVISION.
-
+         MAIN-ROUTINE.
            OPEN INPUT INFILE
            OPEN OUTPUT OUTFILE.
 
@@ -47,7 +48,8 @@
                    AT END
                        MOVE 'Y' TO EOF-SWITCH
                    NOT AT END
-                       DISPLAY IN-STD-ID
+                       DISPLAY IN-STD-ID, "     ", IN-STD-NAME
+                       
                END-READ
            END-PERFORM.
      
