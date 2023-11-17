@@ -12,8 +12,6 @@
                 SELECT OUTFILE
        ASSIGN TO "/home/lloyd/Desktop/Code/Output-Data.txt"
            ORGANIZATION IS LINE SEQUENTIAL.
-       
-
       *-----------------------------------------------------------------
        DATA DIVISION.
        FILE SECTION.
@@ -32,13 +30,24 @@
        01 EOF-SWITCH PIC A(1) VALUE 'N'.
       *-----------------------------------------------------------------
        PROCEDURE DIVISION.
+
            OPEN INPUT INFILE
            OPEN OUTPUT OUTFILE.
-           
-           
 
+           PERFORM READ-PROCEDURE.
 
-           CLOSE INFILE.
+           CLOSE INFILE
            CLOSE OUTFILE.
+
            STOP RUN.
 
+       READ-PROCEDURE.
+           PERFORM UNTIL EOF-SWITCH = 'Y'
+               READ INFILE
+                   AT END
+                       MOVE 'Y' TO EOF-SWITCH
+                   NOT AT END
+                       DISPLAY IN-STD-ID
+               END-READ
+           END-PERFORM.
+     
