@@ -5,14 +5,15 @@
        ENVIRONMENT DIVISION.
        INPUT-OUTPUT SECTION.
        FILE-CONTROL.
-       SELECT INFILE
+                SELECT INFILE
+       ASSIGN TO "/home/lloyd/Desktop/Code/Student-Data.txt" 
+           ORGANIZATION IS LINE SEQUENTIAL.
+       
+                SELECT OUTFILE
+       ASSIGN TO "/home/lloyd/Desktop/Code/Output-Data.txt"
+           ORGANIZATION IS LINE SEQUENTIAL.
+       
 
-           ASSIGN TO 'Simple Banking/DATA/Student-Data.txt'
-               ORGANIZATION IS LINE SEQUENTIAL.
-       SELECT OUTFILE
-
-           ASSIGN TO 'Simple Banking/DATA/Output-Data.txt'
-               ORGANIZATION IS LINE SEQUENTIAL.
       *-----------------------------------------------------------------
        DATA DIVISION.
        FILE SECTION.
@@ -20,7 +21,7 @@
        01  IN-RECORD.
            05 IN-STD-ID PIC 9(4).
            05 IN-STD-NAME PIC X(20).
-
+      
        FD OUTFILE.
        01  OUT-RECORD.
            05 OUT-STD-ID PIC 9(4).
@@ -33,7 +34,11 @@
        PROCEDURE DIVISION.
            OPEN INPUT INFILE
            OPEN OUTPUT OUTFILE.
+           
+           
 
 
+           CLOSE INFILE.
+           CLOSE OUTFILE.
            STOP RUN.
 
