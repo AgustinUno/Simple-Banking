@@ -7,11 +7,11 @@
        FILE-CONTROL.
                 SELECT INFILE
        ASSIGN TO "/home/lloyd/Desktop/Code/Student-Data.txt".
-           
+
 
                 SELECT OUTFILE
        ASSIGN TO "/home/lloyd/Desktop/Code/Output-Data.txt".
-           
+
       *-----------------------------------------------------------------
        DATA DIVISION.
        FILE SECTION.
@@ -61,7 +61,6 @@
                             MOVE IN-STD-CASH TO OUT-STD-CASH
                             MOVE IN-STD-NAME TO OUT-STD-NAME
                             MOVE IN-CODE TO OUT-CODE
-                            WRITE OUT-RECORD FROM IN-RECORD			
+                            WRITE OUT-RECORD FROM IN-RECORD
                END-READ
            END-PERFORM.
-        
