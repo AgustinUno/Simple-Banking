@@ -6,29 +6,32 @@
        INPUT-OUTPUT SECTION.
        FILE-CONTROL.
                 SELECT INFILE
-       ASSIGN TO "/home/lloyd/Desktop/Code/Student-Data.txt"
-           ORGANIZATION IS LINE SEQUENTIAL.
+       ASSIGN TO "/home/lloyd/Desktop/Code/Student-Data.txt".
+           
 
                 SELECT OUTFILE
-       ASSIGN TO "/home/lloyd/Desktop/Code/Output-Data.txt"
-           ORGANIZATION IS LINE SEQUENTIAL.
+       ASSIGN TO "/home/lloyd/Desktop/Code/Output-Data.txt".
+           
       *-----------------------------------------------------------------
        DATA DIVISION.
        FILE SECTION.
-       FD INFILE.
+       FD INFILE RECORDING MODE F.
        01  IN-RECORD.
            05 IN-STD-ID PIC 9(4).
            05 SPC-01 PIC X(12).
            05 IN-STD-NAME PIC X(20).
            05 SPC-02 PIC X(4).
            05 IN-CODE PIC A(1).
-           05 IN-STD-CASH PIC 9(5)V99.
-      *     05 IN-STD-CASH PIC 9(5)V99.
+           05 IN-STD-CASH PIC 9(5).
 
-       FD OUTFILE.
+       FD OUTFILE RECORDING MODE F.
        01  OUT-RECORD.
            05 OUT-STD-ID PIC 9(4).
+           05 SPC-011 PIC X(12).
            05 OUT-STD-NAME PIC X(20).
+           05 SPC-022 PIC X(4) .
+           05 OUT-CODE PIC A(1).
+           05 OUT-STD-CASH PIC 9(5).
 
        WORKING-STORAGE SECTION.
        01 SCTR PIC 9(3) VALUE 0.
@@ -43,11 +46,8 @@
 
            PERFORM READ-PROCEDURE.
 
-
-
            CLOSE INFILE
            CLOSE OUTFILE.
-
            STOP RUN.
 
        READ-PROCEDURE.
@@ -55,13 +55,13 @@
            PERFORM UNTIL EOF-SWITCH = 'Y'
                READ INFILE
                    AT END
-                       MOVE 'Y' TO EOF-SWITCH
+                            MOVE 'Y' TO EOF-SWITCH
                    NOT AT END
-									      MOVE IN-STD-ID TO OUT-STD-ID
-                        MOVE IN-STD-CASH TO FRMT-VAL
-                       DISPLAY IN-STD-ID, "  ", IN-STD-NAME
-                                 ,"  ", FRMT-VAL
-											WRITE OUT-RECORD
+				            MOVE IN-STD-ID TO OUT-STD-ID
+                            MOVE IN-STD-CASH TO OUT-STD-CASH
+                            MOVE IN-STD-NAME TO OUT-STD-NAME
+                            MOVE IN-CODE TO OUT-CODE
+                            WRITE OUT-RECORD FROM IN-RECORD			
                END-READ
            END-PERFORM.
         
