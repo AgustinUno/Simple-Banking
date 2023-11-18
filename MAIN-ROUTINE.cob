@@ -22,7 +22,7 @@
            05 IN-STD-NAME PIC X(20).
            05 SPC-02 PIC X(4).
            05 IN-CODE PIC A(1).
-           05 IN-STD-CASH PIC 9(5).
+           05 IN-STD-CASH PIC 9(5)V99.
 
        FD OUTFILE RECORDING MODE F.
        01  OUT-RECORD.
@@ -31,12 +31,12 @@
            05 OUT-STD-NAME PIC X(20).
            05 SPC-022 PIC X(4) .
            05 OUT-CODE PIC A(1).
-           05 OUT-STD-CASH PIC 9(5).
+           05 OUT-STD-CASH PIC 9(5)V99.
 
        WORKING-STORAGE SECTION.
        01 SCTR PIC 9(3) VALUE 0.
        01 EOF-SWITCH PIC A(1) VALUE 'N'.
-       01 FRMT-VAL PIC $$$$,$$$,$$9.99.
+      *01 FRMT-VAL PIC $$$$,$$$,$$9.99. CURRENCY FORMAT
 
       *-----------------------------------------------------------------
        PROCEDURE DIVISION.
