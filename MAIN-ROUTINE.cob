@@ -6,11 +6,11 @@
        INPUT-OUTPUT SECTION.
        FILE-CONTROL.
                 SELECT INFILE        
-       ASSIGN TO "/home/lloyd/Desktop/Code/Student-Data.txt".
+       ASSIGN TO "/home/lloyd/Desktop/Code/Student-Data.dat".
 
 
                 SELECT OUTFILE
-       ASSIGN TO "/home/lloyd/Desktop/Code/Output-Data.txt"
+       ASSIGN TO "/home/lloyd/Desktop/Code/Output-Data.dat"
                 ACCESS MODE IS SEQUENTIAL.     *> BY LINE, FROM START 
 
       *-----------------------------------------------------------------

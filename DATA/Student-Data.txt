@@ -1,4 +1,19 @@
-STUDENT-CODE    STUDENT-NAME
-0001            MARIA ANNA DIVINO
-0002            FERNANDO SUCLERS
-0003            SPONGEBOB CRUZ
+0001    Maria Anna Divino       W204656           
+0002    Fernando Sickler        D100564           
+0003    Ben Tenenenen           W300798           
+0004    Kardo Dalisay           D600045           
+0005    ROberto Unidlas         D343434           
+0006    Angela Johnson          W789012           
+0007    Ricardo Rodriguez       D123456           
+0008    Samantha Smith          W654321           
+0009    James Turner            D987654           
+0010    Lisa Brown              W111222           
+0011    Michael White           D333444           
+0012    Emily Davis             W555666           
+0013    Robert Martinez         D777888           
+0014    Olivia Taylor           W999000           
+0015    Daniel Lee              D121212           
+0016    Grace Walker            W141414           
+0017    Andrew Moore            D161616           
+0018    Sophia Chen             W181818           
+3434    Mark Fernando           W181343       
