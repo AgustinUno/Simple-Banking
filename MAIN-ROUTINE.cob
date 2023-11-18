@@ -64,4 +64,4 @@
 											WRITE OUT-RECORD
                END-READ
            END-PERFORM.
-              
+        
