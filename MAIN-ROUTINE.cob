@@ -8,36 +8,28 @@
                 SELECT INFILE        
        ASSIGN TO "/home/lloyd/Desktop/Code/Student-Data.dat".
 
-
                 SELECT OUTFILE
-       ASSIGN TO "/home/lloyd/Desktop/Code/Output-Data.dat"
-                ACCESS MODE IS SEQUENTIAL.     *> BY LINE, FROM START 
-
+       ASSIGN TO "/home/lloyd/Desktop/Code/Output-Data.dat".
+                  
       *-----------------------------------------------------------------
        DATA DIVISION.
        FILE SECTION.
-       FD INFILE RECORDING MODE F.
+       FD INFILE.
        01  IN-RECORD.
-           05 IN-STD-ID PIC 9(8).
-      *    05 SPC-01 PIC X(12).
+           05 IN-STD-ID PIC X(8).
            05 IN-STD-NAME PIC X(24).
-      *    05 SPC-02 PIC X(4).
-           05 IN-CODE PIC A(1).
-           05 IN-STD-CASH PIC 9(6).
+           05 IN-CODE PIC X(1).
+           05 IN-STD-CASH PIC 9(6)V99.
 
-       FD OUTFILE RECORDING MODE F.    *> F = FIXED LENGTH 
+       FD OUTFILE.    
        01  OUT-RECORD.
-           05 OUT-STD-ID PIC 9(8).
-      *    05 SPC-011 PIC X(12).
+           05 OUT-STD-ID PIC X(8).
            05 OUT-STD-NAME PIC X(24).
-      *    05 SPC-022 PIC X(1) .
-           05 OUT-CODE PIC A(1).
-           05 OUT-STD-CASH PIC 9(6).
+           05 OUT-CODE PIC X(1).
+           05 OUT-STD-CASH PIC 9(6)V99.
 
        WORKING-STORAGE SECTION.
-      *01 SCTR PIC 9(3) VALUE 0.
        01 EOF-SWITCH PIC A(1) VALUE 'N'.
-      *01 FRMT-VAL PIC $$$$,$$$,$$9.99. CURRENCY FORMAT
 
       *-----------------------------------------------------------------
        PROCEDURE DIVISION.
@@ -52,7 +44,6 @@
            STOP RUN.
 
        READ-PROCEDURE.
-
            PERFORM UNTIL EOF-SWITCH = 'Y'
                READ INFILE
                    AT END
