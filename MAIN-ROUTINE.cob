@@ -30,12 +30,12 @@
            05 OUT-STD-ID PIC 9(8).
       *    05 SPC-011 PIC X(12).
            05 OUT-STD-NAME PIC X(24).
-      *    05 SPC-022 PIC X(4) .
+      *    05 SPC-022 PIC X(1) .
            05 OUT-CODE PIC A(1).
            05 OUT-STD-CASH PIC 9(6).
 
        WORKING-STORAGE SECTION.
-       01 SCTR PIC 9(3) VALUE 0.
+      *01 SCTR PIC 9(3) VALUE 0.
        01 EOF-SWITCH PIC A(1) VALUE 'N'.
       *01 FRMT-VAL PIC $$$$,$$$,$$9.99. CURRENCY FORMAT
 
@@ -65,5 +65,5 @@
                             WRITE OUT-RECORD FROM IN-RECORD  
                END-READ
            END-PERFORM.
-                           DISPLAY "TRANSFER SUCCESS".  *>DEBUGGER 
+      *                    DISPLAY "TRANSFER SUCCESS".  *>DEBUGGER 
                            
