@@ -57,5 +57,5 @@
                             WRITE REC-OUT FROM OUT-RECORD 
                END-READ
            END-PERFORM.
-      *                    DISPLAY "TRANSFER SUCCESS".  *>DEBUGGER 
+                           DISPLAY "TRANSFER SUCCESS".  *>DEBUGGER 
                            
