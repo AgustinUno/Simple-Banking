@@ -22,7 +22,8 @@
            05 IN-STD-CASH PIC 9(6)V99.
 
        FD OUTFILE.    
-       01  OUT-RECORD.
+       01 REC-OUT.
+       02 OUT-RECORD.
            05 OUT-STD-ID PIC X(8).
            05 OUT-STD-NAME PIC X(24).
            05 OUT-CODE PIC X(1).
@@ -53,7 +54,7 @@
                             MOVE IN-STD-CASH TO OUT-STD-CASH
                             MOVE IN-STD-NAME TO OUT-STD-NAME
                             MOVE IN-CODE TO OUT-CODE
-                            WRITE OUT-RECORD FROM IN-RECORD  
+                            WRITE REC-OUT FROM OUT-RECORD 
                END-READ
            END-PERFORM.
       *                    DISPLAY "TRANSFER SUCCESS".  *>DEBUGGER 
