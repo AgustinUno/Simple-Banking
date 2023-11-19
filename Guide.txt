@@ -1,0 +1,52 @@
+- Routines
+- file write
+
+in creating a workspace for a cobol project
+needs:[all need to be on same directory as your cobol file]
+----------
+1. "run.sh" file for the command
+
+#!/bin/bash
+
+# Check if the correct number of arguments is provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <source_file>"
+    exit 1
+fi
+
+source_file="$1"
+executable_name="${source_file%.*}"  # Remove the extension to get the executable name
+
+# Compile the COBOL program
+cobc -x -o "$executable_name" "$source_file"
+
+# Check if compilation was successful
+if [ $? -eq 0 ]; then
+    echo "Compilation successful. Running $executable_name:"
+    ./"$executable_name"
+else
+    echo "Compilation failed."
+fi
+-----------
+2. tasks.json file within .vscode folder [created when creating new task within project dir]
+
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile and Run COBOL",
+      "type": "shell",
+      "command": "bash",
+      "args": ["-c", "./run.sh MAIN-ROUTINE.cob"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
+-------------
+
+Remember to change the file name, in instance the MAIN-ROUTINE.cob
+also bind the task with a key for ease

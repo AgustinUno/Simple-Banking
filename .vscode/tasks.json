@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile and Run COBOL",
+      "type": "shell",
+      "command": "bash",
+      "args": ["-c", "./run.sh MAIN-ROUTINE.cob"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
